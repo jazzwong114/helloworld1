@@ -1,0 +1,48 @@
+
+
+<div class="container" ng-controller="MainController as main">
+	<div>
+    	<acme-navbar creation-date="main.creationDate"></acme-navbar>
+    </div>
+    
+    <div class="container" ng-controller="ClientAccController as ClientAcc">
+      <p1>Client Account</p1><br><br>
+
+       <form>
+		    <label>Name</label><br>
+		        <input type="text" name="name" ng-model="ClientAcc.newcontact.name"/><br>
+		    <label>Email</label> <br>
+		        <input type="text" name="email" ng-model="ClientAcc.newcontact.email"/><br>
+		    <label>Phone</label> <br>
+		        <input type="text" name="phone" ng-model="ClientAcc.newcontact.phone"/><br>
+		        <br/>
+		        <input type="hidden" ng-model="ClientAcc.newcontact.id" />
+		     	<input type="button" value="Save" ng-click='ClientAcc.saveContact()' />
+		</form>
+
+		<br><br>
+		<table border="1">
+			<thead> 
+				<tr>
+				    <th>Name</th>
+				    <th>Email</th>
+				    <th>Phone</th>
+				    <th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="contact in contacts">
+					
+				    <td>{{ contact.name }}</td>
+				    <td>{{ contact.email }}</td>
+				    <td>{{ contact.phone }}</td>
+				    <td>
+				        <a ng-click="edit(contact.id)">edit</a> | 
+				        <a ng-click="delete(contact.id)">delete</a>
+				    </td>
+				 </tr>
+			</tbody>
+		</table>   
+      
+    </div>
+</div>

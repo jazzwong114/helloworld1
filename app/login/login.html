@@ -1,0 +1,16 @@
+
+
+<div class="container" ng-controller="MainController as main">
+	<div>
+    	<acme-navbar creation-date="main.creationDate"></acme-navbar>
+    </div>
+    
+    <div class="container" ng-controller="LoginController as login">
+      <p1>this is login page!</p1><br><br>
+      Login: <input type="text" ng-model="login.LoginID"><br>
+      Password: <input type="text" ng-model="login.Password"> <br><br>
+      <button type="button" ng-click='login.send("loginResult")'>Send</button>
+
+
+    </div>
+</div>
